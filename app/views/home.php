@@ -1,4 +1,4 @@
-<?php require_once 'layout/header.php'; ?>
+<?php require_once __DIR__ . '/layout/header.php'; ?>
 
 <h2>Liste des utilisateurs</h2>
 
@@ -9,13 +9,13 @@
         <th>Email</th>
     </tr>
 
-    <?php foreach ($users as $user): ?>
+    <?php foreach ($employees as $employee): ?>
         <tr>
-            <td><?= $user['id']; ?></td>
-            <td><?= $user['name']; ?></td>
-            <td><?= $user['email']; ?></td>
+            <td><?= $employee['id']; ?></td>
+            <td><?= $employee['name']; ?></td>
+            <td><?= $employee['email']; ?></td>
         </tr>
     <?php endforeach; ?>
 </table>
 
-<?php require_once 'layout/footer.php'; ?>
+<?php require_once __DIR__ . '/layout/footer.php'; ?>
