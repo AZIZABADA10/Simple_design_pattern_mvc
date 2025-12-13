@@ -1,14 +1,13 @@
 <?php
-
-require_once '../app/models/User.php';
+require_once __DIR__ . '/../models/User.php';
 
 class HomeController
 {
     public function index()
     {
-        $user = new User();
-        $users = $user->getAllUsers();
+        $userModel = new User();
+        $users = $userModel->getAllUsers();
 
-        require_once '../app/views/home.php';
+        require_once __DIR__ . '/../views/home.php';
     }
 }
