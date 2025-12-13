@@ -1,13 +1,21 @@
 <?php
+require_once __DIR__ . '/../../config/database.php';
 
 class User
 {
+    private $conn;
+
+    public function __construct()
+    {
+        $this->conn = Database::connect();
+    }
+
     public function getAllUsers()
     {
-        return [
-            ['id' => 1, 'name' => 'Aziz'],
-            ['id' => 2, 'name' => 'Sara'],
-            ['id' => 3, 'name' => 'Youssef'],
-        ];
+        $sql = "SELECT * FROM users";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
